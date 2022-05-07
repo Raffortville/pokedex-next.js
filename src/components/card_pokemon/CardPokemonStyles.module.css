@@ -19,7 +19,7 @@
 }
 
 .card_pokemon:hover .image {
-	transform: scale(1.5);
+	transform: scale(2);
 }
 
 .card_id {
@@ -57,6 +57,6 @@
 }
 
 .image {
-	max-width: 50%;
+	transform: scale(1.5);
 	transition: transform 0.3s ease;
 }

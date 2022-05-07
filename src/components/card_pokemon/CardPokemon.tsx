@@ -16,7 +16,7 @@ const CardPokemon = () => {
 				<div className={styles.card_image}>
 					<img
 						className={styles.image}
-						src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg'
+						src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png'
 						alt='/'
 					/>
 				</div>

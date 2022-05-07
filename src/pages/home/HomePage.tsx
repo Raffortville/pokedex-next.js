@@ -1,7 +1,7 @@
 import React from 'react';
+import styles from './HomePageStyles.module.css';
 import Chip from '../../components/chip/Chip';
 import CardPokemon from '../../components/card_pokemon/CardPokemon';
-import styles from './HomePageStyles.module.css';
 
 const HomePage = () => {
 	return (
