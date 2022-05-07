@@ -1,0 +1,40 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background: rgb(174, 198, 238);
+	background: radial-gradient(
+		circle,
+		rgba(174, 198, 238, 0.5088629201680672) 0%,
+		rgba(148, 187, 233, 0.1419161414565826) 100%
+	);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2 {
+	margin: 0;
+}
+
+/* TYPOGRAPHY */
+
+.header_1 {
+	font-size: 42px;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.header_2 {
+	font-weight: 400;
+	letter-spacing: 1;
+}

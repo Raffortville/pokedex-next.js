@@ -1,0 +1,27 @@
+.chip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 15px;
+    color: white;
+    background-color: #48D0B0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.117);
+    transition: opacity 0.3s ease;
+}
+
+.chip:hover {
+    opacity: 1;
+}
+
+.chip__icon {
+   margin-left: 5px;
+}
+
+.chip__icon > svg {
+    width: 12px;
+    height: 100%;
+    fill: currentColor;
+}
