@@ -3,7 +3,7 @@ import styles from './HomePageStyles.module.css';
 import { getAllPokemons } from 'api/pokeApi';
 import { isEmptyArray } from 'services/helpers';
 import PokemonsList from 'features/pokemons_list/PokemonsList';
-import FilterPokemons from 'features/filter_pokemons/filterPokemons';
+import FilterPokemons from 'features/filter_pokemons/FilterPokemons';
 import { IPokemon } from 'services/types';
 
 const HomePage = () => {

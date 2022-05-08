@@ -6,6 +6,7 @@ import Card from 'components/card/Card';
 
 interface ICardPokemon {
 	pokemon: IPokemon;
+	effectOnHover?: boolean;
 }
 
 const CardPokemon = (props: ICardPokemon) => {
@@ -20,18 +21,25 @@ const CardPokemon = (props: ICardPokemon) => {
 		return color;
 	};
 
+	const renderPokemonTypes = () => {
+		return pokemon.types.map((pokeType: string, index: number) => (
+			<>
+				<span key={index} className={styles.type_text}>
+					{pokeType}
+				</span>
+			</>
+		));
+	};
+
 	return (
 		<Card
 			className={styles.card_pokemon}
-			effectOnHover
+			effectOnHover={props.effectOnHover}
 			style={{ backgroundColor: getPokemonTypeColor() }}>
 			<span className={styles.card_id}>{pokemon.id}</span>
 			<div className={styles.card_info}>
 				<h2>{pokemon.name}</h2>
-				<div className={styles.cardInfo_types}>
-					<span className={styles.type_text}>gogol</span>
-					<span className={styles.type_text}>gogol 2sdsdsdsdsds</span>
-				</div>
+				<div className={styles.cardInfo_types}>{renderPokemonTypes()}</div>
 			</div>
 			<div className={styles.card_image}>
 				<img className={styles.image} src={pokemon.image} alt='/' />
@@ -39,4 +47,9 @@ const CardPokemon = (props: ICardPokemon) => {
 		</Card>
 	);
 };
+
+CardPokemon.defaultProps = {
+	effectOnHover: true,
+};
+
 export default CardPokemon;

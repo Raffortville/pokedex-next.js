@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import styles from './CardStyles.module.css';
 
 interface ICard {
-	children?: ReactNode | JSX.Element;
 	className: string;
+	children?: ReactNode | JSX.Element;
 	effectOnHover?: boolean;
 	style?: React.CSSProperties;
 }

@@ -1,7 +1,3 @@
-export type NameValueObject = {
-	name: string;
-};
-
 export interface IFilterTypes {
 	name: string;
 	color: string;
@@ -14,5 +10,5 @@ export interface IPokemon {
 	height: number;
 	weight: number;
 	types: string[];
-	abilities: NameValueObject[];
+	abilities: string[];
 }

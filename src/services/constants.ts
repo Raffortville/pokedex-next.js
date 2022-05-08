@@ -69,4 +69,8 @@ export const pokemonsTypesList: IFilterTypes[] = [
 		name: 'fairy',
 		color: '#f469a9',
 	},
+	{
+		name: 'poison',
+		color: '#adadad',
+	},
 ];

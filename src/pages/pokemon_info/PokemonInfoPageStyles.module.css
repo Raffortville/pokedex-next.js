@@ -1,0 +1,25 @@
+.container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+}
+
+.card_container {
+	margin-top: 60px;
+	width: 350px;
+}
+
+.infos_container {
+	margin-top: 30px;
+}
+
+.infos {
+	display: flex;
+	margin-top: 15px;
+}
+
+.infos > h2 {
+	margin-right: 10px;
+}
