@@ -1,0 +1,13 @@
+.filter_section {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 60px;
+}
+
+.chipsList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin-top: 15px;
+}

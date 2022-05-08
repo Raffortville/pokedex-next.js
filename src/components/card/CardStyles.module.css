@@ -1,0 +1,18 @@
+.card {
+	height: 100%;
+	width: 100%;
+	padding: 15px;
+	overflow: hidden;
+	color: #fff;
+	border-radius: 3rem;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.616);
+}
+
+.card.shadow_effect {
+	transition: box-shadow 0.3s ease;
+	cursor: pointer;
+}
+
+.card.shadow_effect:hover {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.616);
+}

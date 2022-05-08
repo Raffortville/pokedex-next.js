@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { successRequest } from 'utils/httpRequest';
-import { IPokemons, PokemonType, PokemonAbility } from 'types/pokemonTypes';
+import { IPokemons, NameValueObject } from 'services/types';
+import { successRequest } from 'services/helpers';
 
 const BASE_URL: string = 'https://pokeapi.co/api/v2/pokemon/';
 const LIMIT_NUMBER: number = 100;
@@ -8,7 +8,7 @@ const LIMIT_NUMBER: number = 100;
 export const getAllPokemons = async () => {
 	let promises = [];
 
-	async function getPokemon(id: number) {
+	async function getPokemonById(id: number) {
 		let pokemons: IPokemons[] = [];
 		try {
 			const response = await axios.get(`${BASE_URL + id}`);
@@ -20,10 +20,10 @@ export const getAllPokemons = async () => {
 					height: response.data.height,
 					weight: response.data.weight,
 					types: response.data.types.map(
-						(elmt: { type: PokemonType }) => elmt.type.name
+						(elmt: { type: NameValueObject }) => elmt.type.name
 					),
 					abilities: response.data.abilities.map(
-						(elmt: { ability: PokemonAbility }) => elmt.ability.name
+						(elmt: { ability: NameValueObject }) => elmt.ability.name
 					),
 				});
 				return response.data;
@@ -34,8 +34,14 @@ export const getAllPokemons = async () => {
 	}
 
 	for (let i = 1; i <= LIMIT_NUMBER; i++) {
-		promises.push(getPokemon(i));
+		promises.push(getPokemonById(i));
 	}
 
-	return Promise.all(promises);
+	try {
+		const results = await Promise.all(promises);
+
+		return results;
+	} catch (error) {
+		console.log(error);
+	}
 };

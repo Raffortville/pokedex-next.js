@@ -1,21 +1,10 @@
 .card_pokemon {
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
-	padding: 45px 15px 45px 30px;
-	overflow: hidden;
+	padding: 45px 15px 45px 30px !important;
 	background-color: lightseagreen;
-	color: #fff;
-	cursor: pointer;
-	border-radius: 3rem;
-	box-shadow: 0 0 5px 0 lightseagreen;
-	transition: box-shadow 0.3s ease;
-}
-
-.card_pokemon:hover {
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.616);
 }
 
 .card_pokemon:hover .image {
