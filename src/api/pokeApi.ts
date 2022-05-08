@@ -1,15 +1,14 @@
 import axios from 'axios';
-import { IPokemons, NameValueObject } from 'services/types';
+import { IPokemon, NameValueObject } from 'services/types';
 import { successRequest } from 'services/helpers';
 
 const BASE_URL: string = 'https://pokeapi.co/api/v2/pokemon/';
 const LIMIT_NUMBER: number = 100;
 
 export const getAllPokemons = async () => {
-	let promises = [];
+	let pokemons: IPokemon[] = [];
 
 	async function getPokemonById(id: number) {
-		let pokemons: IPokemons[] = [];
 		try {
 			const response = await axios.get(`${BASE_URL + id}`);
 			if (successRequest(response.status)) {
@@ -26,7 +25,7 @@ export const getAllPokemons = async () => {
 						(elmt: { ability: NameValueObject }) => elmt.ability.name
 					),
 				});
-				return response.data;
+				return pokemons;
 			}
 		} catch (error) {
 			console.log(error);
@@ -34,14 +33,7 @@ export const getAllPokemons = async () => {
 	}
 
 	for (let i = 1; i <= LIMIT_NUMBER; i++) {
-		promises.push(getPokemonById(i));
+		await getPokemonById(i);
 	}
-
-	try {
-		const results = await Promise.all(promises);
-
-		return results;
-	} catch (error) {
-		console.log(error);
-	}
+	return pokemons;
 };

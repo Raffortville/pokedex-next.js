@@ -2,12 +2,17 @@ export type NameValueObject = {
 	name: string;
 };
 
-export interface IPokemons {
+export interface IFilterTypes {
+	name: string;
+	color: string;
+}
+
+export interface IPokemon {
 	id: number;
 	name: string;
 	image: string;
 	height: number;
 	weight: number;
-	types: NameValueObject[];
+	types: string[];
 	abilities: NameValueObject[];
 }

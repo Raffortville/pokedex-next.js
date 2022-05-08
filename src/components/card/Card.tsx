@@ -6,6 +6,7 @@ interface ICard {
 	children?: ReactNode | JSX.Element;
 	className: string;
 	effectOnHover?: boolean;
+	style?: React.CSSProperties;
 }
 
 const Card = (props: ICard) => {
@@ -14,7 +15,8 @@ const Card = (props: ICard) => {
 			className={clsx(styles.card, {
 				[props.className]: props.className,
 				[styles.shadow_effect]: props.effectOnHover,
-			})}>
+			})}
+			style={props.style}>
 			{props.children}
 		</div>
 	);
