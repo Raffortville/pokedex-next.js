@@ -3,7 +3,7 @@ import { IPokemon, NameValueObject } from 'services/types';
 import { successRequest } from 'services/helpers';
 
 const BASE_URL: string = 'https://pokeapi.co/api/v2/pokemon/';
-const LIMIT_NUMBER: number = 100;
+const LIMIT_NUMBER: number = 250;
 
 export const getPokemonById = async (
 	id: number | string | string[] | undefined

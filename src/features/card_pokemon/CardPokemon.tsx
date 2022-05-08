@@ -23,11 +23,9 @@ const CardPokemon = (props: ICardPokemon) => {
 
 	const renderPokemonTypes = () => {
 		return pokemon.types.map((pokeType: string, index: number) => (
-			<>
-				<span key={index} className={styles.type_text}>
-					{pokeType}
-				</span>
-			</>
+			<span key={index} className={styles.type_text}>
+				{pokeType}
+			</span>
 		));
 	};
 

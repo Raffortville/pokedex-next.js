@@ -10,6 +10,7 @@ interface IPokemonsList {
 
 const PokemonsList = (props: IPokemonsList) => {
 	const router = useRouter();
+
 	const renderPokemons = () => {
 		const onPokemonClick = (id: number) =>
 			router.push({

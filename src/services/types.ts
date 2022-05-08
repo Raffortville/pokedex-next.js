@@ -1,3 +1,7 @@
+export type NameValueObject = {
+	name: string;
+};
+
 export interface IFilterTypes {
 	name: string;
 	color: string;

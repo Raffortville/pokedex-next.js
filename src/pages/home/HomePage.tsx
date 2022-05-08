@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import styles from './HomePageStyles.module.css';
 import { getAllPokemons } from 'api/pokeApi';
 import { isEmptyArray } from 'services/helpers';
+import { IPokemon } from 'services/types';
 import PokemonsList from 'features/pokemons_list/PokemonsList';
 import FilterPokemons from 'features/filter_pokemons/FilterPokemons';
-import { IPokemon } from 'services/types';
 
 const HomePage = () => {
 	const [pokemons, setPokemons] = useState<IPokemon[]>([]);
+	const [initialPokemons, setInitialPokemons] = useState<IPokemon[]>([]);
+	const [selectedType, setSelectedType] = useState<string>('');
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -17,6 +19,7 @@ const HomePage = () => {
 			setIsLoading(true);
 			try {
 				const data: IPokemon[] = await getAllPokemons();
+				setInitialPokemons(data);
 				setPokemons(data);
 			} catch (error) {
 				console.log(error);
@@ -33,6 +36,17 @@ const HomePage = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		if (selectedType !== undefined || selectedType !== '') {
+			const filteredPokemons = initialPokemons.filter(
+				(poke: IPokemon) => poke.types[0] === selectedType
+			);
+			setPokemons(filteredPokemons);
+		}
+	}, [selectedType]);
+
+	const onSelectedType = (type: string) => setSelectedType(type);
+
 	return (
 		<main className={styles.container}>
 			<h1 className='header_1'>PokeDex</h1>
@@ -40,7 +54,7 @@ const HomePage = () => {
 				<h2>Loading pokemons...</h2>
 			) : (
 				<>
-					<FilterPokemons />
+					<FilterPokemons onClick={onSelectedType} />
 					<PokemonsList pokemons={pokemons} />
 				</>
 			)}
