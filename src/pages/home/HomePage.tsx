@@ -16,7 +16,6 @@ const HomePage = () => {
 		let cancelRequest = false;
 
 		const fetchPokemons = async () => {
-			setIsLoading(true);
 			try {
 				const data: IPokemon[] = await getAllPokemons();
 				setInitialPokemons(data);
@@ -28,6 +27,7 @@ const HomePage = () => {
 		};
 
 		if (isEmptyArray(pokemons) && !cancelRequest) {
+			setIsLoading(true);
 			fetchPokemons();
 		}
 
@@ -54,7 +54,9 @@ const HomePage = () => {
 				<h2>Loading pokemons...</h2>
 			) : (
 				<>
-					<FilterPokemons onClick={onSelectedType} />
+					{!isEmptyArray(pokemons) && (
+						<FilterPokemons onClick={onSelectedType} />
+					)}
 					<PokemonsList pokemons={pokemons} />
 				</>
 			)}

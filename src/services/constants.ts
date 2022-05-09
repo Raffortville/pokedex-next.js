@@ -18,14 +18,6 @@ export const pokemonsTypesList: IFilterTypes[] = [
 		color: '#48D0B0',
 	},
 	{
-		name: 'flying',
-		color: '#BAB0D5',
-	},
-	{
-		name: 'fighting',
-		color: '#d6b591',
-	},
-	{
 		name: 'electric',
 		color: '#FFD86F',
 	},
@@ -34,36 +26,8 @@ export const pokemonsTypesList: IFilterTypes[] = [
 		color: '#B1736C',
 	},
 	{
-		name: 'rock',
-		color: '#a6aab6',
-	},
-	{
-		name: 'psychic',
-		color: '#9B7FA6',
-	},
-	{
-		name: 'ice',
-		color: '#7FCCEC',
-	},
-	{
 		name: 'bug',
 		color: '#C3CE75',
-	},
-	{
-		name: 'ghost',
-		color: '#735797',
-	},
-	{
-		name: 'steel',
-		color: '#CCCCDE',
-	},
-	{
-		name: 'dragon',
-		color: '#F9BE00',
-	},
-	{
-		name: 'dark',
-		color: '#333',
 	},
 	{
 		name: 'fairy',
